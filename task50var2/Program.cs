@@ -21,7 +21,11 @@ for (int i = 0; i < m; i++)
     for (int j = 0; j < n; j++)
     {
         matrix[i, j] = new Random().Next(0,10);
+        if (i == numberI && j == numberJ)
+             Console.ForegroundColor = ConsoleColor.Red;
+        else {Console.ForegroundColor = ConsoleColor.White; }
         Console.Write(matrix[i, j] + " ");
+        Console.ResetColor();
     }
     Console.WriteLine();
 }
@@ -35,3 +39,7 @@ for (int i = 0; i < m; i++)
 
 if(result) { Console.WriteLine($"Найдено ваше число {matrix[numberI,numberJ]}"); }
 else { Console.WriteLine($"{numberI}{numberJ} => такого числа в массиве нет"); }
+
+// Console.ForegroundColor = ConsoleColor.Red;
+//                         Console.WriteLine(i * 12 + j + 1);
+//                         Console.ResetColor();
